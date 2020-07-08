@@ -1,5 +1,6 @@
 FROM maven:3.5-jdk-8-alpine
 WORKDIR /
+ADD . //
 RUN echo "$PWD"
 RUN mvn install
 
