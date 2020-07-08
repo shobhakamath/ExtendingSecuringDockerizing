@@ -3,6 +3,6 @@ WORKDIR /
 ADD . //
 EXPOSE 8080
 RUN mvn package -DskipTests
-ENTRYPOINT  [ "mvn", "spring-boot:run", "-Dspring.profiles.active=mysql"]
+ENTRYPOINT  [ "mvn", "spring-boot:run"]
  
 
