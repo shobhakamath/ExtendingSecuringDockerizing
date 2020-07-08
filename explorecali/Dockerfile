@@ -3,6 +3,7 @@ WORKDIR /
 ADD . //
 RUN echo "$PWD"
 RUN mvn package -DskipTests
+RUN echo "$PWD"
 
 FROM java:8
 WORKDIR /
