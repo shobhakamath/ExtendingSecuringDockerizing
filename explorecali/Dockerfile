@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-8-alpine as build
-ARG project 
-pwd
+ARG project  
+RUN echo -e 'test1' > /test1.txt
 WORKDIR pwd
 RUN mvn install
 
