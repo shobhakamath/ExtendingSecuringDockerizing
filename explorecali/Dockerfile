@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-8-alpine as build
 ARG project   
-WORKDIR //
+WORKDIR "$PWD"
 RUN echo "$PWD"
 RUN mvn install
 
