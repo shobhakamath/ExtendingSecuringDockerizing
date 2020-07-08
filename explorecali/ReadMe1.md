@@ -10,4 +10,6 @@ docker logs ec-app5
 
 Click on the 8080 and copy the ip address details in the postman request and test. Tested well and is working well :)
 
+docker inspect ec-app5
+
 
