@@ -1,3 +1,7 @@
+FROM maven:3.5-jdk-8-alpine as build
+WORKDIR /
+RUN mvn install
+
 FROM java:8
 WORKDIR /
 ADD target/explorecali-2.0.0-SNAPSHOT.jar //
