@@ -1,5 +1,4 @@
 FROM maven:3.5-jdk-8-alpine as build
-WORKDIR .
 RUN mvn install
 
 FROM java:8
