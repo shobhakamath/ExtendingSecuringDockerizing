@@ -1,8 +1,18 @@
-FROM maven:3.5-jdk-8-alpine as build
-RUN mvn install
 
-FROM java:8
-WORKDIR /
-ADD target/explorecali-2.0.0-SNAPSHOT.jar //
+FROM alpine/git as clone
+ARG url (1)
+WORKDIR /app
+RUN git clone ${url} (2)
+FROM maven:3.5-jdk-8-alpine as build
+ARG project (3)
+WORKDIR /app
+COPY --from=clone /app/${project} /app
+RUN mvn install
+FROM openjdk:8-jre-alpine
+ARG artifactid
+ARG version
+ENV artifact ${artifactid}-${version}.jar (4)
+WORKDIR /app
+COPY --from=build /app/target/${artifact} /app
 EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "/explorecali-2.0.0-SNAPSHOT.jar"]
+CMD ["java -jar ${artifact}"]
