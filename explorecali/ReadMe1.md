@@ -1,6 +1,8 @@
 
 https://labs.play-with-docker.com/
 
+git clone https://github.com/shobhakamath/ExtendingSecuringDockerizing.git
+
 docker build -t explorecali .
 
 docker run --name ec-app5 -p8080:8080 -d explorecali
