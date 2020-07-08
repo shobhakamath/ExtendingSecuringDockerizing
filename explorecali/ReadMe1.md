@@ -31,6 +31,10 @@ docker run -it --link ec-mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT
 
 docker run --name ec-ap87 -p8081:8081 -d shobhakamath/explorecali- loads  from the dockerhub
 
+other important commands
+https://github.com/shobhakamath/ExtendingSecuringDockerizing/blob/master/explorecali/README.md
+
+
 
 
 
