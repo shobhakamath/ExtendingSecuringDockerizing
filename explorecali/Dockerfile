@@ -1,7 +1,7 @@
 FROM maven:3.5-jdk-8-alpine as build
 ARG project 
 WORKDIR /app
-COPY  /app/${project} /app
+COPY ~/test/ExtendingSecuringDockerizing/explorecali/app/${project} /app
 RUN mvn install
 
 FROM java:8
