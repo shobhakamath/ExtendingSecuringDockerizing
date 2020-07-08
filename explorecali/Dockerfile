@@ -1,6 +1,7 @@
 FROM maven:3.5-jdk-8-alpine as build
 ARG project 
-WORKDIR /app
+pwd
+WORKDIR pwd
 RUN mvn install
 
 FROM java:8
