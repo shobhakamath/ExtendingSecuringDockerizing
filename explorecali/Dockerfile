@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-8-alpine as build
 WORKDIR /app
-COPY --from=0 /app/explorecali /app 
+COPY --from=clone /app/explorecali /app 
 RUN mvn install
 
 FROM java:8
