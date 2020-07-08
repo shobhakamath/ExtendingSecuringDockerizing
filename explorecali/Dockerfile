@@ -4,6 +4,9 @@ ADD . //
 RUN mvn package -DskipTests
 
 
+
 FROM java:8
 EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "target/explorecali-2.0.0-SNAPSHOT.jar"]
+ENTRYPOINT [ "mvn", "spring-boot:run", "-Dspring.profiles.active=mysql"]
+
+ 
